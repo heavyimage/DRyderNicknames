@@ -8,8 +8,6 @@ import tweepy
 
 from secret import *
 
-REPO = "http://github.com/heavyimage/spacemutinynamegenerator"
-
 # Setup logging
 logger = logging.getLogger()
 handler = logging.StreamHandler()
@@ -101,12 +99,12 @@ def main():
         # make
         name = MST3K_nickname().name
 
-        # log
-        logger.info(name)
-
         # tweet
-        msg = "%s (via %s)" % (name, REPO)
+        msg = name
         get_api().update_status(msg)
+
+        # log
+        logger.info("Posted: %s" % name)
 
         # sleep for 24 hours
         time.sleep(86400)
