@@ -108,8 +108,8 @@ def main():
         msg = "%s (via %s)" % (name, REPO)
         get_api().update_status(msg)
 
-        # sleep for 6 hours
-        time.sleep(21600)
+        # sleep for 24 hours
+        time.sleep(86400)
 
 if __name__ == "__main__":
     main()
