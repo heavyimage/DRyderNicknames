@@ -1,6 +1,6 @@
-## Space Mutiny Nickname Generator
+## Space Mutiny Name Generator
 
-Space Mutiny Nickname Generator is a simple twitter bot that generates nicknames in the style of those given to Dave Ryder in Space Mutiny by the crew of the Satellite of Love.
+Space Mutiny Name Generator is a simple twitter bot that generates nicknames in the style of those given to Dave Ryder in Space Mutiny by the crew of the Satellite of Love.
 
 ## To run:
 Clone the repo and create a file called secrets.py alongside bot.py with the following contents:
@@ -17,5 +17,5 @@ Then run bot.py
 * Based on twitter bot tutorial [here](https://scotch.io/tutorials/build-a-tweet-bot-with-python)
 
 ## TODO:
-* Create pixel art for each nickname ala [this](http://plnkr.co/edit/Dji8rljS0yDL16Ao8Iq6?p=preview)
+* Create pixel art for each name ala [this](http://plnkr.co/edit/Dji8rljS0yDL16Ao8Iq6?p=preview)
 * Run via AWS lambda for free!
