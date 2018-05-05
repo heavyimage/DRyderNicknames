@@ -93,6 +93,8 @@ class MST3K_nickname(object):
 def main():
     """ entry point """
 
+    counter = 0
+
     # Main loop
     while True:
 
@@ -102,9 +104,10 @@ def main():
         # tweet
         msg = name
         get_api().update_status(msg)
+        counter +=1
 
         # log
-        logger.info("Posted: %s" % name)
+        logger.info("Posted name #%s: %s" % (counter, name))
 
         # sleep for 24 hours
         time.sleep(86400)
