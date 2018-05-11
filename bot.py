@@ -71,7 +71,10 @@ class MST3K_nickname(object):
 
         def get_first(self):
             """ Generate a first name """
-            return choice(self.first_chunks).title()
+            return "%s%s" % (
+                    weighted_choice([("", 39), ("We put our faith in ", 1)]),
+                    choice(self.first_chunks).title()
+                )
 
         def get_last(self):
             """ Generate a last name """
