@@ -40,21 +40,21 @@ class MST3K_nickname(object):
     # Extracted from here: http://mst3k.wikia.com/wiki/Dave_Ryder
     first_chunks = ['big', 'blast', 'bold', 'bolt', 'brick', 'buck', 'buff',
             'butch', 'crud', 'crunch', 'dirk', 'eat', 'fist', 'flint', 'fridge',
-            'gristle', 'hack', 'lump', 'punch', 'punt', 'reef', 'rip', 'roll',
-            'slab', 'slate', 'smash', 'smoke', 'splint', 'stump', 'thick',
-            'touch', 'trunk']
+            'gristle', 'hack', 'hunk', 'lump', 'punch', 'punt', 'reef', 'rip',
+            'roll', 'slab', 'slate', 'smash', 'smoke', 'splint', 'stump',
+            'thick', 'touch', 'trunk', 'whip']
 
     second_chunks = ['beef', 'big', 'blast', 'blow', 'bone', 'bulk', 'butt',
             'chest', 'chunk', 'dead', 'drink', 'fist', 'fizzle', 'hard', 'iron',
-            'lamp', 'large', 'man', 'mc', 'plank', 'punch', 'rock', 'rust',
-            'side', 'slab', 'slag', 'slam', 'speed', 'squat', 'steak', 'thick',
-            'vander']
+            'lamp', 'large', 'man', 'plank', 'punch', 'rock', 'rust', 'side',
+            'slab', 'slag', 'slam', 'speed', 'squat', 'steak', 'thick',
+            'thorn', 'vander']
 
     third_chunks = ['back', 'beef', 'body', 'bone', 'broth', 'cheek', 'cheese',
             'chest', 'chunk', 'crunch', 'face', 'fast', 'fist', 'flank',
             'groin', 'hair', 'head', 'huge', 'iron', 'jaw', 'knob', 'lift',
-            'lots', 'meal', 'meat', 'men', 'muscle', 'neck', 'pec', 'rock',
-            'rod', 'stag', 'steak', 'thrust']
+            'lots', 'man', 'meal', 'meat', 'men', 'muscle', 'neck', 'pec',
+            'rock', 'rod', 'stag', 'steak', 'thrust']
 
     bob = "Bob Johnson!  Oh wait..."
 
