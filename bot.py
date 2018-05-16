@@ -112,8 +112,8 @@ def main():
         # log
         logger.info("Posted name #%s: %s" % (counter, name))
 
-        # sleep for 12 hours
-        time.sleep(43200)
+        # sleep for 6 hours
+        time.sleep(21600)
 
 if __name__ == "__main__":
     main()
