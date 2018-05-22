@@ -114,7 +114,7 @@ def main():
         counter +=1
 
         # log
-        logger.info("Posted name #%s: %s" % (counter, name))
+        logger.info("Posted msg #%s: %s" % (counter, msg))
 
         # sleep for 6 hours
         time.sleep(21600)
