@@ -8,6 +8,8 @@ import tweepy
 
 from secret import *
 
+HASHTAG_INTERVAL = 10
+
 # Setup logging
 logger = logging.getLogger()
 handler = logging.StreamHandler()
@@ -106,6 +108,8 @@ def main():
 
         # tweet
         msg = name
+        if counter % HASHTAG_INTERVAL == 0:
+            msg += " #mst3k"
         get_api().update_status(msg)
         counter +=1
 
