@@ -103,6 +103,7 @@ def main():
     """ entry point """
 
     counter = 0
+    followers = set()
 
     # Main loop
     while True:
@@ -110,15 +111,28 @@ def main():
         # make
         name = MST3K_nickname().get_name()
 
+        # api
+        api = get_api()
+
         # tweet
         msg = name
         if counter % HASHTAG_INTERVAL == 0:
             msg += " #mst3k"
-        get_api().update_status(msg)
+        api.update_status(msg)
         counter +=1
 
         # log
         logger.info("Posted msg #%s: %s" % (counter, msg))
+
+        # Check for new followers:
+        try:
+            for follower in tweepy.Cursor(api.followers).items():
+                handle = follower.screen_name
+                if handle not in followers:
+                    logger.info("New Follower: %s" % handle)
+                    followers.add(handle)
+        except tweepy.RateLimitError:
+            logger.info("Exceeded rate limit searching for followers :-(")
 
         # sleep for 6 hours
         time.sleep(21600)
