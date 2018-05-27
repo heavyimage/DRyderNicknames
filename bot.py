@@ -65,9 +65,13 @@ class MST3K_nickname(object):
 
         # there's always a 1/40 chance of Bob Johnson!
         self.name = weighted_choice(
-                [(self.get_name(), 39), (self.bob, 1)])
+                [(self.make_name(), 39), (self.bob, 1)])
 
     def get_name(self):
+        """ Return the instance's name """
+        return self.name
+
+    def make_name(self):
         """ Build a name using simple logic """
         first, last = "", ""
 
@@ -104,7 +108,7 @@ def main():
     while True:
 
         # make
-        name = MST3K_nickname().name
+        name = MST3K_nickname().get_name()
 
         # tweet
         msg = name
