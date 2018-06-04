@@ -5,7 +5,7 @@ Space Mutiny Name Generator is a simple twitter bot that generates nicknames in 
 Follow it at [@DryderNicknames](https://twitter.com/DRyderNicknames)
 
 ## To run:
-Clone the repo and create a file called secrets.py alongside bot.py with the following contents:
+Clone the repo and create a file called secret.py alongside bot.py with the following contents:
 
     consumer_key = 'XXX'
     consumer_secret = 'XXX'
