@@ -1,4 +1,4 @@
-## Space Mutiny Name Generator
+## Dave Ryder Nickname Generator
 
 Space Mutiny Name Generator is a simple twitter bot that generates nicknames in the style of those given to Dave Ryder in Space Mutiny by the crew of the Satellite of Love.
 
