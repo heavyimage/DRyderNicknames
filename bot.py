@@ -152,8 +152,8 @@ def main():
         except tweepy.RateLimitError:
             logger.info("Exceeded rate limit searching for followers :-(")
 
-        # sleep for 6 hours
-        time.sleep(21600)
+        # sleep for 3 hours
+        time.sleep(10800)
 
 if __name__ == "__main__":
     main()
