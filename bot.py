@@ -135,7 +135,7 @@ def main():
         # tweet
         msg = name
         if counter % HASHTAG_INTERVAL == 0:
-            msg += " #mst3k"
+            msg += weighted_choice([(" #mst3k", 1), (" #rifftrax", 1)])
         api.update_status(msg)
         counter +=1
 
