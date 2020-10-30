@@ -40,32 +40,48 @@ class MST3K_nickname(object):
     """ A class for generating a nicknames procedurally """
 
     # Extracted from here: http://mst3k.wikia.com/wiki/Dave_Ryder
-    first_chunks = ['big', 'blast', 'bold', 'bolt', 'brick', 'buck', 'buff',
-            'butch', 'crud', 'crunch', 'dirk', 'eat', 'fist', 'flint', 'fridge',
-            'gristle', 'hack', 'hunk', 'lump', 'punch', 'punt', 'reef', 'rip',
-            'roll', 'slab', 'slate', 'smash', 'smoke', 'splint', 'stump',
-            'thick', 'touch', 'trunk', 'whip']
+    # and here: https://keeprollingrifftrax.com/2019/12/26/dave-ryder/
+    first_chunks = ['bacon', 'beef', 'big', 'blast', 'blitz', 'block',
+                    'boaty', 'bob', 'bold', 'bolt', 'brick', 'buck', 'buff',
+                    'bulk', 'burl', 'burpee', 'butch', 'clint', 'crash',
+                    'crud', 'crunch', 'dickie', 'dirk', 'earl', 'eat', 'fist',
+                    'flex', 'flint', 'fridge', 'gristle', 'gunner', 'hack',
+                    'herpe', 'hump', 'hunk', 'hunter', 'knob', 'lex', 'luke',
+                    'lump', 'lunch', 'lunk', 'max', 'pork', 'punch', 'punt',
+                    'reef', 'rip', 'roll', 'rough', 'rusty', 'slab', 'slap',
+                    'slate', 'smash', 'smoke', 'splint', 'stiff', 'storm',
+                    'stump', 'tank', 'thick', 'thump', 'touch', 'trunk',
+                    'turkey', 'whip']
 
-    second_chunks = ['beef', 'big', 'blast', 'blow', 'bone', 'bulk', 'butt',
-            'chest', 'chunk', 'dead', 'drink', 'fist', 'fizzle', 'hard', 'iron',
-            'lamp', 'large', 'man', 'plank', 'punch', 'rock', 'rust', 'side',
-            'slab', 'slag', 'slam', 'speed', 'squat', 'steak', 'thick',
-            'thorn', 'vander']
+    second_chunks = ['battle', 'beef', 'bench', 'big', 'blast', 'blow',
+                     'boat', 'bone', 'brisk', 'bulge', 'bulk', 'butt',
+                     'chest', 'chunk', 'cross', 'dead', 'doug', 'drink',
+                     'dry', 'face', 'fist', 'fizzle', 'hand', 'hard', 'iron',
+                     'kettle', 'knock', 'lamp', 'large', 'limp', 'man', 'meat',
+                     'pack', 'pec', 'plank', 'puma', 'punch', 'railing',
+                     'rock', 'roid', 'rust', 'sex', 'shank', 'shoulder',
+                     'side', 'slab', 'slag', 'slam', 'smack', 'speed',
+                     'squat', 'steak', 'thick', 'thorn', 'thrust', 'vander']
 
-    third_chunks = ['back', 'beef', 'body', 'bone', 'broth', 'cheek', 'cheese',
-            'chest', 'chunk', 'crunch', 'face', 'fast', 'fist', 'flank',
-            'groin', 'hair', 'head', 'huge', 'iron', 'jaw', 'knob', 'lift',
-            'lots', 'man', 'meal', 'meat', 'men', 'muscle', 'neck', 'pec',
-            'rock', 'rod', 'stag', 'steak', 'thrust']
+    third_chunks = ['all', 'asshole', 'back', 'beef', 'bells', 'body', 'bone',
+                    'broth', 'cheek', 'cheese', 'chest', 'chunk', 'cookie',
+                    'crunch', 'face', 'fast', 'fist', 'fit', 'flank', 'groin',
+                    'hair', 'head', 'hold', 'huge', 'iron', 'jaw', 'kill',
+                    'knob', 'wurst', 'lift', 'lots', 'man', 'meal', 'meat',
+                    'men', 'more', 'muscle', 'neck', 'nugget', 'pants', 'pec',
+                    'press', 'punch', 'rage', 'rock', 'rod', 'run', 'shaft',
+                    'spread', 'squat', 'stag', 'stallion', 'steak', 'stone',
+                    'sweat', 'thrust', 'wall', 'want', 'wich']
 
     bob = "Bob Johnson!  Oh wait..."
+    beef = "Beef Brisket!"
 
     def __init__(self):
         """ Set self.name to a randomly generated (w/ weights!) nickname """
 
         # there's always a 1/40 chance of Bob Johnson!
         self.name = weighted_choice(
-                [(self.make_name(), 39), (self.bob, 1)])
+                [(self.make_name(), 39), (self.bob, 1), (self.beef, 1)])
 
     def get_name(self):
         """ Return the instance's name """
@@ -87,7 +103,9 @@ class MST3K_nickname(object):
             return "%s%s%s" % (
                 # As per the original list there's a 1/39 (not conting Bob)
                 # chance for a 'Mc' prefix to the lastname
-                weighted_choice([("", 36), ("Mc", 3)]),
+                #
+                # Can also, with low propability be "von <lastname>"
+                weighted_choice([("", 35), ("Mc", 3), ("von ", 1)]),
                 choice(self.second_chunks).title(),
                 choice(self.third_chunks))
 
