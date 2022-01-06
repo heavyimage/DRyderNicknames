@@ -123,6 +123,8 @@ def main():
     counter = 0
     followers = set()
 
+    print("Serving: https://twitter.com/DRyderNicknames")
+
     # Main loop
     while True:
 
