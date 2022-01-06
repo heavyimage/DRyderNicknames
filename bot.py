@@ -43,35 +43,35 @@ class MST3K_nickname(object):
     # and here: https://keeprollingrifftrax.com/2019/12/26/dave-ryder/
     first_chunks = ['bacon', 'beef', 'big', 'blast', 'blitz', 'block',
                     'boaty', 'bob', 'bold', 'bolt', 'brick', 'buck', 'buff',
-                    'bulk', 'burl', 'burpee', 'butch', 'clint', 'crash',
-                    'crud', 'crunch', 'dickie', 'dirk', 'earl', 'eat', 'fist',
+                    'bulk', 'burl', 'burpy', 'butch', 'clint', 'crash',
+                    'crud', 'crunch', 'dicky', 'dirk', 'earl', 'eat', 'fist',
                     'flex', 'flint', 'fridge', 'gristle', 'gunner', 'hack',
-                    'herpe', 'hump', 'hunk', 'hunter', 'knob', 'lex', 'luke',
-                    'lump', 'lunch', 'lunk', 'max', 'pork', 'punch', 'punt',
-                    'reef', 'rip', 'roll', 'rough', 'rusty', 'slab', 'slap',
-                    'slate', 'smash', 'smoke', 'splint', 'stiff', 'storm',
-                    'stump', 'tank', 'thick', 'thump', 'touch', 'trunk',
-                    'turkey', 'whip']
+                    'herpe', 'hulk', 'hump', 'hunk', 'hunter', 'knob', 'lex',
+                    'lift', 'luke', 'lump', 'lunch', 'lunk', 'max', 'much', 'pork',
+                    'punch', 'punt', 'reef', 'rip', 'roll', 'rough', 'rusty',
+                    'slab', 'slap', 'slate', 'smash', 'smoke', 'splint', 'stiff',
+                    'storm', 'stump', 'subliterate', 'tank', 'thick', 'thump',
+                    'touch', 'trunk', 'turkey', 'whip']
 
-    second_chunks = ['battle', 'beef', 'bench', 'big', 'blast', 'blow',
-                     'boat', 'bone', 'brisk', 'bulge', 'bulk', 'butt',
-                     'chest', 'chunk', 'cross', 'dead', 'doug', 'drink',
-                     'dry', 'face', 'fist', 'fizzle', 'hand', 'hard', 'iron',
-                     'kettle', 'knock', 'lamp', 'large', 'limp', 'man', 'meat',
-                     'pack', 'pec', 'plank', 'puma', 'punch', 'railing',
-                     'rock', 'roid', 'rust', 'sex', 'shank', 'shoulder',
-                     'side', 'slab', 'slag', 'slam', 'smack', 'speed',
-                     'squat', 'steak', 'thick', 'thorn', 'thrust', 'vander']
+    second_chunks = ['ass', 'battle', 'beef', 'bench', 'big', 'blast', 'blow', 'boat', 'bone',
+                    'brisk', 'bulge', 'bulk', 'butt', 'chest', 'chunk', 'cross', 'dead',
+                    'doug', 'drink', 'dry', 'face', 'fist', 'fizzle', 'hand', 'hard',
+                    'iron', 'kettle', 'knock', 'lamp', 'large', 'limp', 'man', 'meat',
+                    'pack', 'pec', 'plank', 'puma', 'punch', 'railing', 'rock', 'roid',
+                    'rust', 'schwar', 'sex', 'shake', 'shank', 'shoulder', 'side', 'slab',
+                    'slag', 'slam', 'smack', 'snack', 'speed', 'squat', 'steak', 'thack',
+                    'thick', 'thorn', 'thrust', 'vander']
 
-    third_chunks = ['all', 'asshole', 'back', 'beef', 'bells', 'body', 'bone',
+    third_chunks = ['all', 'back', 'beef', 'bells', 'body', 'bone', 'brisket',
                     'broth', 'cheek', 'cheese', 'chest', 'chunk', 'cookie',
                     'crunch', 'face', 'fast', 'fist', 'fit', 'flank', 'groin',
-                    'hair', 'head', 'hold', 'huge', 'iron', 'jaw', 'kill',
+                    'hair', 'head', 'hold', 'hole', 'huge', 'iron', 'jaw', 'kill',
                     'knob', 'wurst', 'lift', 'lots', 'man', 'meal', 'meat',
                     'men', 'more', 'muscle', 'neck', 'nugget', 'pants', 'pec',
                     'press', 'punch', 'rage', 'rock', 'rod', 'run', 'shaft',
                     'spread', 'squat', 'stag', 'stallion', 'steak', 'stone',
-                    'sweat', 'thrust', 'wall', 'want', 'wich']
+                    'sweat', 'thrust', 'wall', 'want', 'watt', 'wich', 'wurst',
+                    'zenegger']
 
     bob = "Bob Johnson!  Oh wait..."
     beef = "Beef Brisket!"
