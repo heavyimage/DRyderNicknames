@@ -1,12 +1,9 @@
-""" A simple bot for tweeting nicknames for Dave Ryder """
+""" A simple bot for tooting nicknames for Dave Ryder """
 
 from random import choice
 import logging
 import time
-
-import tweepy
-
-from secret import *
+from mastodon import Mastodon
 
 HASHTAG_INTERVAL = 10
 
@@ -25,16 +22,13 @@ def weighted_choice(choices):
     https://stackoverflow.com/a/3679780 """
     return choice(sum(([value]*weight for value, weight in choices), []))
 
-
 def get_api():
-    """ Access and authorize our Twitter credentials from secrets.py
-    and produce api object """
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_secret)
-    api = tweepy.API(auth)
-
+    """ Access and authorize mastodon using secret token file """
+    api = Mastodon(
+        access_token = 'token.secret',
+        api_base_url = 'https://mastodon.social/'
+    )
     return api
-
 
 class MST3K_nickname(object):
     """ A class for generating a nicknames procedurally """
@@ -117,13 +111,27 @@ class MST3K_nickname(object):
         # Always exclaimatory
         return "%s %s!" % (first, last)
 
+
+def get_all_followers(api):
+    """ Get the accounts we are following and keep only the account names """
+    accounts = []
+    user_id = api.account_verify_credentials().id
+    following = api.account_followers(user_id)
+    while following != None :
+        accounts += list(map(lambda x: x.acct, following))
+        following = api.fetch_next(following)
+    return accounts
+
 def main():
     """ entry point """
 
     counter = 0
     followers = set()
 
-    print("Serving: https://twitter.com/DRyderNicknames")
+    logger.info("Serving: https://mastodon.social/@daveryderbot")
+
+    # get api object
+    api = get_api()
 
     # Main loop
     while True:
@@ -131,31 +139,24 @@ def main():
         # make
         name = MST3K_nickname().get_name()
 
-        # api
-        api = get_api()
-
-        # tweet
+        # toot
         msg = name
         if counter % HASHTAG_INTERVAL == 0:
             msg += weighted_choice([(" #mst3k", 1), (" #rifftrax", 1)])
-        api.update_status(msg)
+        api.status_post(msg)
         counter +=1
 
         # log
         logger.info("Posted msg #%s: %s" % (counter, msg))
 
         # Check for new followers:
-        try:
-            for follower in tweepy.Cursor(api.followers).items():
-                handle = follower.screen_name
-                if handle not in followers:
-                    logger.info("New Follower: %s" % handle)
-                    followers.add(handle)
-        except tweepy.RateLimitError:
-            logger.info("Exceeded rate limit searching for followers :-(")
+        for handle in get_all_followers(api):
+            if handle not in followers:
+                logger.info("New Follower: %s" % handle)
+                followers.add(handle)
 
         # sleep for 3 hours
-        time.sleep(10800)
+        time.sleep(60 * 60 * 3)
 
 if __name__ == "__main__":
     main()
